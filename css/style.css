@@ -1,0 +1,177 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: 'Open Sans',sans-serif;
+	width: 100%;
+	height: 100vh;
+	background: #000;
+}
+
+#container {
+	width: 1024px;
+	height: 560px;
+	background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(../img/bg.jpg); 
+	margin: 20px auto;
+}
+
+#calculator {
+	width: 320px;
+	height: 520px;
+	background-color: #fff;
+	margin: 2px auto;
+	position: relative;
+	top: 20px;
+	border-radius: 4px;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2) 0 6px 12px 0 rgba(0,0,0,0.19);
+}
+
+#result {
+	height: 120px;
+}
+
+#output-text {
+	width: 250px;
+	height: 120px;
+	float: left;
+}
+
+#history {
+	height: 20px;
+	text-align: right;
+	margin: 0 20px;
+	padding-top: 20px;
+	font-size: 16px;
+	color: #919191;
+}
+
+#output {
+	height: 60px;
+	text-align: right;
+	margin: 10px 15px;
+	font-size: 32px;
+}
+
+#output-microphone {
+	width: 70px;
+	height: 120px;
+	float: right;
+	position: relative;
+}
+
+#microphone {
+	background-image: url(../img/mic.png);
+	width: 30px;
+	height: 30px;
+	background-size: 100% 100%;
+	border-radius: 100%; 
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	transition: all 0.3s ease-in-out 0s;
+}
+.record {
+	animation: microphone-animation 1.2s infinite;
+}
+@Keyframes microphone-animation {
+	0% {
+		box-shadow: 0 0 0 1px rgba(0,148,255,0.4);
+	}
+	50% {
+		box-shadow: 0 0 0 10px rgba(0,148,255,0.4);
+	}
+	100% {
+		box-shadow: 0 0 0 0 rgba(0,148,255,0.4);
+	}
+}
+
+#tooltip {
+	width: 220px;
+	font-size: 12px;
+	position: absolute;
+	background: #eaedef;
+	left: 50%;
+	top: 50%;
+	padding: 10px;
+	text-align: justify;
+	border-radius: 4px;
+	transform: translateX(8%) translateY(-14%);
+	box-shadow: 0 0 5px rgba(0,0,0,0.3);
+	visibility: hidden;
+	opacity: 0;
+	transition: all 0.3s ease-in-out 0s;
+}
+#tooltip::before {
+	content: "";
+	position: absolute;
+	border-width: 5px;
+	border-style: solid;
+	border-color: transparent #eaedef transparent transparent;
+	left: -10px;
+}
+#microphone:hover #tooltip {
+	visibility: visible;
+	opacity: 1;
+}
+
+#keyboard {
+	height: 400px;
+}
+.operator, .number, .empty {
+	width: 50px;
+	height: 50px;
+	margin: 15px;
+	float: left;
+	border-radius: 100%;
+	border-width: 0;
+	font-size: 16px;
+	font-weight: bold;
+}
+.operator {
+	background: #eaedef;
+}
+.number, .empty {
+	background: none;
+}
+.operator, .number {
+	cursor: pointer;
+	transition: all 0.3s ease-in-out 0s;
+}
+.operator:active, .number:active {
+	font-size: 14px;
+}
+.operator:focus, .number:focus, .empty:focus {
+	outline: 0;
+}
+.operator:nth-child(4n) {
+	font-size: 20px;
+}
+.operator:nth-child(4) {
+	background-color: #d6b161;
+}
+.operator:nth-child(8) {
+	background-color: #4650dc;
+}
+.operator:nth-child(12) {
+	background-color: #FFCE00;
+}
+.operator:nth-child(16) {
+	background-color: #00c9b1;
+}
+.operator:nth-child(20) {
+	background-color: #f41c54;
+}
+
+
+
+
+
+
+
+
+
+
+
