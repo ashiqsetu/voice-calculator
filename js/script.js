@@ -106,9 +106,9 @@ microphone.onclick = function() {
 			input = input.replace(property, operations[property]);
 		}
 		document.getElementById("output-value").innerText = input;
-		srtTimeout(function() {
+		setTimeout(function() {
 			evaluate(input);
-		},2000);
+		},1500);
 
 		microphone.classList.remove("record");
 	}
